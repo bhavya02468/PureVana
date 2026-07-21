@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herb Detail | Purevana International LLP</title>
+  <meta
+    name="description"
+    content="Ayurvedic herb detail page for Purevana International LLP."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-topbar">
+    <div class="container hero-shell">
+      <nav class="navbar">
+        <a class="brand" href="index.html" aria-label="Purevana home">
+          <img src="assets/purevana-logo.png" alt="Purevana">
+        </a>
+        <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+        <label class="nav-burger" for="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a class="active" href="categories.html">Business Categories</a>
+          <a href="contact.html">Contact</a>
+          <a class="quote-btn" href="contact.html#enquiry">Request a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-light">
+      <div class="container">
+        <div class="page-flow">
+          <a href="categories.html">Business Categories</a>
+          <span>/</span>
+          <a href="category-ayurvedic.html">Ayurvedic &amp; Herbal Products</a>
+          <span>/</span>
+          <strong id="crumb-name">Herb</strong>
+        </div>
+
+        <div class="product-detail-grid">
+          <div class="product-hero-panel">
+            <div class="product-visual">
+              <img id="hero-image" alt="Herb product image">
+              <div id="hero-fallback" class="product-visual-fallback">
+                <i id="hero-icon" class="fa-solid fa-leaf"></i>
+              </div>
+            </div>
+            <div class="product-detail-copy">
+              <p class="detail-kicker" id="scientific-name">Scientific Name</p>
+              <h2 id="product-name">Herb</h2>
+              <p id="product-copy">
+                We supply premium quality herb in raw form for manufacturers, traders, wholesalers and exporters worldwide.
+              </p>
+              <div class="tag-row">
+                <span>100% Natural</span>
+                <span>Bulk Supply</span>
+                <span>Worldwide Delivery</span>
+                <span>Raw Form</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="info-panel">
+            <div class="mini-stat">
+              <strong>Category</strong>
+              <span>Ayurvedic &amp; Herbal Raw Herbs</span>
+            </div>
+            <div class="mini-stat">
+              <strong>Supply Mode</strong>
+              <span>B2B wholesale and bulk order support only</span>
+            </div>
+            <div class="mini-stat">
+              <strong>Typical Material</strong>
+              <span id="raw-label">Raw herb</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="section-title">
+          <h2>Available In Raw Form</h2>
+          <span></span>
+        </div>
+
+        <div class="form-options-grid" id="form-options"></div>
+
+        <div class="section section-soft pack-section">
+          <div class="section-title">
+            <h2>Packing Options</h2>
+            <span></span>
+          </div>
+          <div class="pack-grid" id="pack-grid"></div>
+        </div>
+
+        <div class="centered-action">
+          <a class="btn btn-gold" href="contact.html#enquiry">Request Bulk Quote <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand footer-brand-mark" href="index.html">
+          <img src="assets/purevana-logo.png" alt="Purevana">
+        </a>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="categories.html">Business Categories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Current Path</h3>
+        <ul>
+          <li><a href="categories.html">All Categories</a></li>
+          <li><a href="category-ayurvedic.html">Ayurvedic Products</a></li>
+          <li><a id="current-herb-link" href="category-ayurvedic.html">Herb</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i> E-66, Sector-63, Noida - 201301, India</li>
+          <li><i class="fa-solid fa-phone"></i> +91 99585 37520</li>
+          <li><i class="fa-solid fa-envelope"></i> info@purevana.com</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Order Support</h3>
+        <p class="newsletter-text">Share your required form, packing size and destination country for a proper quotation.</p>
+        <a class="btn btn-gold" href="contact.html#enquiry">Get Quote</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="herb-data.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug") || "agnimantha";
+    const herb = (window.herbCatalog || []).find((item) => item.slug === slug) || (window.herbCatalog || [])[0];
+
+    if (herb) {
+      document.title = `${herb.name} | Purevana International LLP`;
+      document.querySelector('meta[name="description"]').setAttribute(
+        "content",
+        `${herb.name} raw herb in bulk supply from Purevana International LLP.`
+      );
+      document.getElementById("crumb-name").textContent = herb.name;
+      document.getElementById("scientific-name").textContent = herb.scientific;
+      document.getElementById("product-name").textContent = herb.name;
+      document.getElementById("product-copy").textContent = herb.description;
+      document.getElementById("raw-label").textContent = herb.rawLabel;
+      document.getElementById("current-herb-link").textContent = herb.name;
+      document.getElementById("current-herb-link").href = `herb.html?slug=${herb.slug}`;
+      document.getElementById("hero-icon").className = `fa-solid ${herb.icon}`;
+
+      const heroImage = document.getElementById("hero-image");
+      const heroFallback = document.getElementById("hero-fallback");
+      heroImage.src = `${herb.imageBase}/main.jpg`;
+      heroImage.alt = `${herb.name} raw herb`;
+      heroImage.addEventListener("load", () => {
+        heroImage.classList.add("loaded");
+        heroFallback.style.display = "none";
+      });
+      heroImage.addEventListener("error", () => {
+        heroImage.removeAttribute("src");
+        heroFallback.style.display = "flex";
+      });
+
+      const formOptions = document.getElementById("form-options");
+      herb.forms.forEach((formName, index) => {
+        const article = document.createElement("article");
+        article.className = "form-option";
+        const imagePath = `${herb.imageBase}/form-${index + 1}.jpg`;
+        article.innerHTML = `
+          <div class="form-photo">
+            <img src="${imagePath}" alt="${herb.name} ${formName}">
+          </div>
+          <h3>${herb.name} ${formName}</h3>
+        `;
+        const img = article.querySelector("img");
+        img.addEventListener("error", () => {
+          const fallback = document.createElement("div");
+          fallback.className = "form-icon";
+          fallback.innerHTML = `<i class="fa-solid ${herb.icon}"></i>`;
+          img.parentElement.replaceWith(fallback);
+        });
+        formOptions.appendChild(article);
+      });
+
+      const packGrid = document.getElementById("pack-grid");
+      herb.packing.forEach((pack) => {
+        const div = document.createElement("div");
+        div.className = "pack-card";
+        div.textContent = pack;
+        packGrid.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

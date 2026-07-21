@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category | Purevana International LLP</title>
+  <meta
+    name="description"
+    content="Business category details for Purevana International LLP."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-topbar">
+    <div class="container hero-shell">
+      <nav class="navbar">
+        <a class="brand" href="index.html" aria-label="Purevana home">
+          <img src="assets/purevana-logo.png" alt="Purevana">
+        </a>
+        <input id="nav-toggle" class="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+        <label class="nav-burger" for="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a class="active" href="categories.html">Business Categories</a>
+          <a href="contact.html">Contact</a>
+          <a class="quote-btn" href="contact.html#enquiry">Request a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-light category-page-shell">
+      <div class="container">
+        <div class="page-flow">
+          <a href="categories.html">Business Categories</a>
+          <span>/</span>
+          <strong id="category-crumb">Category</strong>
+        </div>
+
+        <section class="category-hero-card">
+          <div class="category-hero-copy">
+            <p class="category-eyebrow" id="category-eyebrow">Business Category</p>
+            <h1 id="category-title">Category Name</h1>
+            <p class="category-description" id="category-description">
+              Category description goes here.
+            </p>
+            <div class="category-tag-row">
+              <span>B2B Supply</span>
+              <span>Bulk Orders</span>
+              <span>Worldwide Delivery</span>
+            </div>
+          </div>
+          <div class="category-hero-visual">
+            <div class="category-hero-icon-wrap" id="category-hero-visual-wrap">
+              <img id="category-hero-image" alt="Category product preview">
+              <i id="category-icon" class="fa-solid fa-box"></i>
+            </div>
+          </div>
+        </section>
+
+        <section class="category-highlights-grid" id="category-highlights"></section>
+
+        <section class="category-items-shell">
+          <div class="section-title left">
+            <h2 id="items-title">Available Range</h2>
+            <span></span>
+          </div>
+          <div class="category-items-grid" id="category-items"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand footer-brand-mark" href="index.html">
+          <img src="assets/purevana-logo.png" alt="Purevana">
+        </a>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="categories.html">Business Categories</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Current Path</h3>
+        <ul>
+          <li><a href="categories.html">All Categories</a></li>
+          <li><a id="footer-category-link" href="categories.html">Category</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i> E-66, Sector-63, Noida - 201301, India</li>
+          <li><i class="fa-solid fa-phone"></i> +91 99585 37520</li>
+          <li><i class="fa-solid fa-envelope"></i> info@purevana.com</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Need Pricing?</h3>
+        <p class="newsletter-text">Tell us the product, quantity and destination country for faster quotation support.</p>
+        <a class="btn btn-gold" href="contact.html#enquiry">Send Enquiry</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="herb-data.js"></script>
+  <script src="bagasse-data.js"></script>
+  <script src="category-data.js"></script>
+  <script>
+    const query = new URLSearchParams(window.location.search);
+    const slug = query.get("slug") || "ayurvedic-herbal";
+    const categories = window.categoryCatalog || [];
+    const herbs = window.herbCatalog || [];
+    const bagasse = window.bagasseCatalog || [];
+    const category = categories.find((item) => item.slug === slug) || categories[0];
+
+    if (category) {
+      document.title = `${category.name} | Purevana International LLP`;
+      document.querySelector('meta[name="description"]').setAttribute("content", category.description);
+      document.getElementById("category-crumb").textContent = category.name;
+      document.getElementById("footer-category-link").textContent = category.name;
+      document.getElementById("footer-category-link").href = `category.html?slug=${category.slug}`;
+      document.getElementById("category-eyebrow").textContent = category.eyebrow;
+      document.getElementById("category-title").textContent = category.name;
+      document.getElementById("category-description").textContent = category.description;
+      document.getElementById("category-icon").className = `fa-solid ${category.icon}`;
+      const heroImage = document.getElementById("category-hero-image");
+      const heroIcon = document.getElementById("category-icon");
+      const heroWrap = document.getElementById("category-hero-visual-wrap");
+
+      if (category.heroImage) {
+        heroImage.src = category.heroImage;
+        heroImage.alt = category.name;
+        heroImage.addEventListener("load", () => {
+          heroWrap.classList.add("with-image");
+          heroIcon.style.display = "none";
+        });
+        heroImage.addEventListener("error", () => {
+          heroWrap.classList.remove("with-image");
+          heroIcon.style.display = "";
+        });
+      }
+
+      const highlightRoot = document.getElementById("category-highlights");
+      category.highlights.forEach((highlight) => {
+        const article = document.createElement("article");
+        article.className = "category-highlight-card";
+        article.innerHTML = `
+          <strong>${highlight.title}</strong>
+          <p>${highlight.text}</p>
+        `;
+        highlightRoot.appendChild(article);
+      });
+
+      const itemsRoot = document.getElementById("category-items");
+      if (category.itemsType === "herbs") {
+        document.getElementById("items-title").textContent = "Ayurvedic Herb Catalogue";
+        herbs.forEach((herb) => {
+          const card = document.createElement("article");
+          card.className = "catalog-card static";
+          const formsMarkup = herb.forms
+            .map((form) => `<span>${form}</span>`)
+            .join("");
+          const packingMarkup = herb.packing
+            .map((pack) => `<span>${pack}</span>`)
+            .join("");
+          card.innerHTML = `
+            <div class="catalog-image">
+              <img src="${herb.imageBase}/main.jpg" alt="${herb.name}">
+            </div>
+            <div class="catalog-copy">
+              <p class="catalog-meta">${herb.scientific}</p>
+              <h3>${herb.name}</h3>
+              <p>${herb.description}</p>
+              <div class="catalog-detail-block">
+                <strong>Raw Material</strong>
+                <p>${herb.rawLabel}</p>
+              </div>
+              <div class="catalog-detail-block">
+                <strong>Available Forms</strong>
+                <div class="catalog-chip-row">${formsMarkup}</div>
+              </div>
+              <div class="catalog-detail-block">
+                <strong>Packing Options</strong>
+                <div class="catalog-chip-row compact">${packingMarkup}</div>
+              </div>
+              <a class="card-cta" href="contact.html#enquiry">Request Quote &rarr;</a>
+            </div>
+          `;
+          const img = card.querySelector("img");
+          img.addEventListener("error", () => {
+            card.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${herb.icon}"></i></div>`;
+          });
+          itemsRoot.appendChild(card);
+        });
+      } else if (category.itemsType === "bagasse") {
+        document.getElementById("items-title").textContent = "Bagasse Product Categories";
+        bagasse.forEach((product) => {
+          const card = document.createElement("article");
+          card.className = "catalog-card static";
+          const featuresMarkup = product.features
+            .map((feature) => `<span>${feature}</span>`)
+            .join("");
+          const specsMarkup = product.specs
+            .slice(0, 6)
+            .map((spec) => `<li>${spec.name}</li>`)
+            .join("");
+          const useMarkup = product.uses
+            .slice(0, 4)
+            .map((useCase) => `<span>${useCase}</span>`)
+            .join("");
+          card.innerHTML = `
+            <div class="catalog-image">
+              <img src="${product.imageBase}/main.jpg" alt="${product.name}">
+            </div>
+            <div class="catalog-copy">
+              <p class="catalog-meta">${product.category}</p>
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <div class="catalog-detail-block">
+                <strong>Key Features</strong>
+                <div class="catalog-chip-row">${featuresMarkup}</div>
+              </div>
+              <div class="catalog-detail-block">
+                <strong>Popular Sizes / Types</strong>
+                <ul class="catalog-mini-list">${specsMarkup}</ul>
+              </div>
+              <div class="catalog-detail-block">
+                <strong>Common Uses</strong>
+                <div class="catalog-chip-row compact">${useMarkup}</div>
+              </div>
+              <a class="card-cta" href="contact.html#enquiry">Request Quote &rarr;</a>
+            </div>
+          `;
+          const img = card.querySelector("img");
+          img.addEventListener("error", () => {
+            card.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${product.icon}"></i></div>`;
+          });
+          itemsRoot.appendChild(card);
+        });
+      } else {
+        document.getElementById("items-title").textContent = "Available Range";
+        (category.items || []).forEach((item) => {
+          const article = document.createElement("article");
+          article.className = "catalog-card compact";
+          article.innerHTML = `
+            <div class="catalog-copy">
+              <p class="catalog-meta">${category.name}</p>
+              <h3>${item.name}</h3>
+              <p>${item.detail}</p>
+              <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
+            </div>
+          `;
+          itemsRoot.appendChild(article);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

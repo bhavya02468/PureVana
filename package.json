@@ -1,0 +1,24 @@
+{
+  "name": "purevana-website",
+  "version": "1.0.0",
+  "description": "Node.js website for Purevana International LLP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "website",
+    "purevana"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
