@@ -8,7 +8,8 @@ window.herbCatalog = [
     forms: ["Stem Bark Whole", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/agnimantha"
+    imageBase: "assets/herbs/agnimantha",
+    catalogImage: "assets/images/AGNIMANTHA.jpeg"
   },
   {
     slug: "aloe-vera",
@@ -19,7 +20,8 @@ window.herbCatalog = [
     forms: ["Whole Leaf (Dried)", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/aloe-vera"
+    imageBase: "assets/herbs/aloe-vera",
+    catalogImage: "assets/images/ALOE VERA.jpeg"
   },
   {
     slug: "amla",
@@ -30,7 +32,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-apple-whole",
-    imageBase: "assets/herbs/amla"
+    imageBase: "assets/herbs/amla",
+    catalogImage: "assets/images/AMLA.jpeg"
   },
   {
     slug: "anantmool",
@@ -41,7 +44,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-grip-lines",
-    imageBase: "assets/herbs/anantmool"
+    imageBase: "assets/herbs/anantmool",
+    catalogImage: "assets/images/ANANTMOOL.jpeg"
   },
   {
     slug: "arjuna",
@@ -52,7 +56,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/arjuna"
+    imageBase: "assets/herbs/arjuna",
+    catalogImage: "assets/images/ARJUNA.jpeg"
   },
   {
     slug: "ami",
@@ -63,7 +68,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-seedling",
-    imageBase: "assets/herbs/ami"
+    imageBase: "assets/herbs/ami",
+    catalogImage: "assets/images/AMI.jpeg"
   },
   {
     slug: "ashoka",
@@ -74,7 +80,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/ashoka"
+    imageBase: "assets/herbs/ashoka",
+    catalogImage: "assets/images/ASHOKA.jpeg"
   },
   {
     slug: "ashwagandha",
@@ -85,7 +92,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-grip-lines",
-    imageBase: "assets/herbs/ashwagandha"
+    imageBase: "assets/herbs/ashwagandha",
+    catalogImage: "assets/images/ASHWAGANDHA.jpeg"
   },
   {
     slug: "bakuchi",
@@ -96,7 +104,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-seedling",
-    imageBase: "assets/herbs/bakuchi"
+    imageBase: "assets/herbs/bakuchi",
+    catalogImage: "assets/images/BAKUCHI.jpeg"
   },
   {
     slug: "bhringraj",
@@ -107,7 +116,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/bhringraj"
+    imageBase: "assets/herbs/bhringraj",
+    catalogImage: "assets/images/BHRINGRAJ.jpeg"
   },
   {
     slug: "bhumi-amla",
@@ -118,7 +128,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-clover",
-    imageBase: "assets/herbs/bhumi-amla"
+    imageBase: "assets/herbs/bhumi-amla",
+    catalogImage: "assets/images/BHUMI AMLA.jpeg"
   },
   {
     slug: "brahmi",
@@ -129,7 +140,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/brahmi"
+    imageBase: "assets/herbs/brahmi",
+    catalogImage: "assets/images/BRAHMI.jpeg"
   },
   {
     slug: "chirayata",
@@ -140,7 +152,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-wheat-awn",
-    imageBase: "assets/herbs/chirayata"
+    imageBase: "assets/herbs/chirayata",
+    catalogImage: "assets/images/CHIRAYATA.jpeg"
   },
   {
     slug: "daruharidra",
@@ -151,7 +164,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-staff-snake",
-    imageBase: "assets/herbs/daruharidra"
+    imageBase: "assets/herbs/daruharidra",
+    catalogImage: "assets/images/DARUHARIDRA.jpeg"
   },
   {
     slug: "giloy",
@@ -162,7 +176,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-link",
-    imageBase: "assets/herbs/giloy"
+    imageBase: "assets/herbs/giloy",
+    catalogImage: "assets/images/GILROY.jpeg"
   },
   {
     slug: "gokhru",
@@ -173,7 +188,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-certificate",
-    imageBase: "assets/herbs/gokhru"
+    imageBase: "assets/herbs/gokhru",
+    catalogImage: "assets/images/GOKHRU.jpeg"
   },
   {
     slug: "gudmar",
@@ -184,7 +200,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/gudmar"
+    imageBase: "assets/herbs/gudmar",
+    catalogImage: "assets/images/GUDMAR.jpeg"
   },
   {
     slug: "hibiscus",
@@ -195,7 +212,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-fan",
-    imageBase: "assets/herbs/hibiscus"
+    imageBase: "assets/herbs/hibiscus",
+    catalogImage: "assets/images/HIBISCUS.jpeg"
   },
   {
     slug: "isabgol",
@@ -206,7 +224,8 @@ window.herbCatalog = [
     forms: ["Whole Husk", "Cut Husk", "Broken Husk", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-bowl-rice",
-    imageBase: "assets/herbs/isabgol"
+    imageBase: "assets/herbs/isabgol",
+    catalogImage: "assets/images/ISABGOL.jpeg"
   },
   {
     slug: "jatamansi",
@@ -217,7 +236,8 @@ window.herbCatalog = [
     forms: ["Whole Root", "Cut Root", "Broken Root", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-wand-magic-sparkles",
-    imageBase: "assets/herbs/jatamansi"
+    imageBase: "assets/herbs/jatamansi",
+    catalogImage: "assets/images/JATAMANSI.jpeg"
   },
   {
     slug: "kalmegh",
@@ -228,7 +248,8 @@ window.herbCatalog = [
     forms: ["Whole Herb", "Cut Herb", "Broken Herb", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-seedling",
-    imageBase: "assets/herbs/kalmegh"
+    imageBase: "assets/herbs/kalmegh",
+    catalogImage: "assets/images/KALMEGH.jpeg"
   },
   {
     slug: "khadir",
@@ -239,7 +260,8 @@ window.herbCatalog = [
     forms: ["Whole Pieces", "Cut Pieces", "Broken Pieces", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/khadir"
+    imageBase: "assets/herbs/khadir",
+    catalogImage: "assets/images/KHADIR.jpeg"
   },
   {
     slug: "lodhra",
@@ -250,7 +272,8 @@ window.herbCatalog = [
     forms: ["Whole Bark", "Cut Bark", "Broken Bark", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/lodhra"
+    imageBase: "assets/herbs/lodhra",
+    catalogImage: "assets/images/LODHRA.jpeg"
   },
   {
     slug: "moringa",
@@ -261,7 +284,8 @@ window.herbCatalog = [
     forms: ["Whole Leaves", "Leaf Cut", "Pods Cut", "Leaf Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/moringa"
+    imageBase: "assets/herbs/moringa",
+    catalogImage: "assets/images/MORINGA.jpeg"
   },
   {
     slug: "mulethi",
@@ -272,7 +296,8 @@ window.herbCatalog = [
     forms: ["Whole Sticks", "Cut Sticks", "Cut Roots", "Root Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-grip-lines-vertical",
-    imageBase: "assets/herbs/mulethi"
+    imageBase: "assets/herbs/mulethi",
+    catalogImage: "assets/images/MULETHI.jpeg"
   },
   {
     slug: "nagarmotha",
@@ -283,7 +308,8 @@ window.herbCatalog = [
     forms: ["Whole Rhizomes", "Cut Rhizomes", "Cut Pieces", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-braille",
-    imageBase: "assets/herbs/nagarmotha"
+    imageBase: "assets/herbs/nagarmotha",
+    catalogImage: "assets/images/NAGARMOTHA.jpeg"
   },
   {
     slug: "neem",
@@ -294,7 +320,8 @@ window.herbCatalog = [
     forms: ["Whole Leaves", "Twigs / Sticks", "Seeds / Kernels", "Leaf Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/neem"
+    imageBase: "assets/herbs/neem",
+    catalogImage: "assets/images/NEEM.jpeg"
   },
   {
     slug: "patala",
@@ -305,7 +332,8 @@ window.herbCatalog = [
     forms: ["Whole Dried", "Cut", "Broken", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/patala"
+    imageBase: "assets/herbs/patala",
+    catalogImage: "assets/images/PATALA.jpeg"
   },
   {
     slug: "punarnava",
@@ -316,7 +344,8 @@ window.herbCatalog = [
     forms: ["Whole Herb", "Cut Herb", "Root Pieces", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-seedling",
-    imageBase: "assets/herbs/punarnava"
+    imageBase: "assets/herbs/punarnava",
+    catalogImage: "assets/images/PUNARNAVA.jpeg"
   },
   {
     slug: "sarpgandha",
@@ -327,7 +356,8 @@ window.herbCatalog = [
     forms: ["Whole Roots", "Cut Roots", "Root Pieces", "Root Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-staff-snake",
-    imageBase: "assets/herbs/sarpgandha"
+    imageBase: "assets/herbs/sarpgandha",
+    catalogImage: "assets/images/SARPGANDHA.jpeg"
   },
   {
     slug: "senna",
@@ -338,7 +368,8 @@ window.herbCatalog = [
     forms: ["Whole Leaves", "Cut Leaves", "Broken Leaves", "Leaf Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/senna"
+    imageBase: "assets/herbs/senna",
+    catalogImage: "assets/images/SENNA.jpeg"
   },
   {
     slug: "shankhpushpi",
@@ -349,7 +380,8 @@ window.herbCatalog = [
     forms: ["Whole Herb", "Cut Herb", "Broken Herb", "Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-flower-tulip",
-    imageBase: "assets/herbs/shankhpushpi"
+    imageBase: "assets/herbs/shankhpushpi",
+    catalogImage: "assets/images/SHANKHPUSHPI.jpeg"
   },
   {
     slug: "shatavari",
@@ -360,7 +392,8 @@ window.herbCatalog = [
     forms: ["Whole Roots", "Cut Roots", "Root Pieces", "Root Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-grip-lines",
-    imageBase: "assets/herbs/shatavari"
+    imageBase: "assets/herbs/shatavari",
+    catalogImage: "assets/images/SHATAVARI.jpeg"
   },
   {
     slug: "tagar",
@@ -371,7 +404,8 @@ window.herbCatalog = [
     forms: ["Whole Roots", "Cut Roots", "Root Pieces", "Root Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-grip-lines",
-    imageBase: "assets/herbs/tagar"
+    imageBase: "assets/herbs/tagar",
+    catalogImage: "assets/images/TAGAR.jpeg"
   },
   {
     slug: "tulsi",
@@ -382,7 +416,8 @@ window.herbCatalog = [
     forms: ["Whole Leaves", "Cut Leaves", "Crushed Leaves", "Leaf Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/tulsi"
+    imageBase: "assets/herbs/tulsi",
+    catalogImage: "assets/images/TULSI.jpeg"
   },
   {
     slug: "varuna",
@@ -393,7 +428,8 @@ window.herbCatalog = [
     forms: ["Whole Bark", "Cut Bark", "Bark Pieces", "Bark Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-tree",
-    imageBase: "assets/herbs/varuna"
+    imageBase: "assets/herbs/varuna",
+    catalogImage: "assets/images/VARUNA.jpeg"
   },
   {
     slug: "vasaka",
@@ -404,6 +440,7 @@ window.herbCatalog = [
     forms: ["Whole Leaves", "Cut Leaves", "Leaf Pieces", "Leaf Powder"],
     packing: ["500g", "1kg", "5kg", "10kg", "25kg", "50kg+"],
     icon: "fa-leaf",
-    imageBase: "assets/herbs/vasaka"
+    imageBase: "assets/herbs/vasaka",
+    catalogImage: "assets/images/VASAKA.jpeg"
   }
 ];

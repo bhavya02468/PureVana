@@ -84,6 +84,7 @@ button {
 .hero-shell {
   position: relative;
   z-index: 1;
+  width: min(1480px, calc(100% - 12px));
 }
 
 .navbar {
@@ -97,7 +98,7 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: clamp(170px, 15vw, 250px);
+  width: clamp(220px, 18vw, 320px);
   flex: 0 0 auto;
   color: var(--white);
 }
@@ -142,22 +143,11 @@ button {
   background: var(--gold);
 }
 
-.quote-btn {
-  padding: 12px 18px;
-  border: 1px solid rgba(202, 160, 79, 0.85);
-  border-radius: 4px;
-  color: var(--gold-bright);
-}
-
-.quote-btn::after {
-  display: none;
-}
-
 .hero-content {
   display: flex;
   align-items: center;
   min-height: 720px;
-  padding: 70px 0 90px;
+  padding: 56px 0 90px;
 }
 
 .subhero-content {
@@ -173,7 +163,7 @@ button {
 }
 
 .hero-copy {
-  max-width: 560px;
+  max-width: 760px;
 }
 
 .subhero-content h1 {
@@ -195,9 +185,16 @@ button {
 .hero h1 {
   margin: 0;
   font-size: clamp(3rem, 6vw, 5.25rem);
-  line-height: 0.96;
+  line-height: 0.92;
   text-transform: uppercase;
   letter-spacing: -0.03em;
+}
+
+.hero-copy .eyebrow,
+.hero-copy .experience,
+.hero-copy .hero-text,
+.hero-copy .hero-actions {
+  max-width: 640px;
 }
 
 .hero-line {

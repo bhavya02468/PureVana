@@ -40,7 +40,6 @@
           <a href="about.html">About Us</a>
           <a class="active" href="categories.html">Business Categories</a>
           <a href="contact.html">Contact</a>
-          <a class="quote-btn" href="contact.html#enquiry">Request a Quote</a>
         </div>
       </nav>
     </div>
@@ -177,39 +176,22 @@
         highlightRoot.appendChild(article);
       });
 
-      const itemsRoot = document.getElementById("category-items");
-      if (category.itemsType === "herbs") {
-        document.getElementById("items-title").textContent = "Ayurvedic Herb Catalogue";
-        herbs.forEach((herb) => {
-          const card = document.createElement("article");
-          card.className = "catalog-card static";
-          const formsMarkup = herb.forms
-            .map((form) => `<span>${form}</span>`)
-            .join("");
-          const packingMarkup = herb.packing
-            .map((pack) => `<span>${pack}</span>`)
-            .join("");
-          card.innerHTML = `
-            <div class="catalog-image">
-              <img src="${herb.imageBase}/main.jpg" alt="${herb.name}">
-            </div>
-            <div class="catalog-copy">
-              <p class="catalog-meta">${herb.scientific}</p>
-              <h3>${herb.name}</h3>
+        const itemsRoot = document.getElementById("category-items");
+        if (category.itemsType === "herbs") {
+          document.getElementById("items-title").textContent = "Ayurvedic Herb Catalogue";
+          herbs.forEach((herb) => {
+            const herbCardImage = herb.catalogImage || `${herb.imageBase}/main.jpg`;
+            const card = document.createElement("article");
+            card.className = "catalog-card static";
+            card.innerHTML = `
+              <div class="catalog-image">
+              <img src="${herbCardImage}" alt="${herb.name}">
+              </div>
+              <div class="catalog-copy">
+                <p class="catalog-meta">${herb.scientific}</p>
+                <h3>${herb.name}</h3>
               <p>${herb.description}</p>
-              <div class="catalog-detail-block">
-                <strong>Raw Material</strong>
-                <p>${herb.rawLabel}</p>
-              </div>
-              <div class="catalog-detail-block">
-                <strong>Available Forms</strong>
-                <div class="catalog-chip-row">${formsMarkup}</div>
-              </div>
-              <div class="catalog-detail-block">
-                <strong>Packing Options</strong>
-                <div class="catalog-chip-row compact">${packingMarkup}</div>
-              </div>
-              <a class="card-cta" href="contact.html#enquiry">Request Quote &rarr;</a>
+              <a class="card-cta" href="herb.html?slug=${herb.slug}">View Details &rarr;</a>
             </div>
           `;
           const img = card.querySelector("img");
@@ -223,17 +205,6 @@
         bagasse.forEach((product) => {
           const card = document.createElement("article");
           card.className = "catalog-card static";
-          const featuresMarkup = product.features
-            .map((feature) => `<span>${feature}</span>`)
-            .join("");
-          const specsMarkup = product.specs
-            .slice(0, 6)
-            .map((spec) => `<li>${spec.name}</li>`)
-            .join("");
-          const useMarkup = product.uses
-            .slice(0, 4)
-            .map((useCase) => `<span>${useCase}</span>`)
-            .join("");
           card.innerHTML = `
             <div class="catalog-image">
               <img src="${product.imageBase}/main.jpg" alt="${product.name}">
@@ -242,19 +213,7 @@
               <p class="catalog-meta">${product.category}</p>
               <h3>${product.name}</h3>
               <p>${product.description}</p>
-              <div class="catalog-detail-block">
-                <strong>Key Features</strong>
-                <div class="catalog-chip-row">${featuresMarkup}</div>
-              </div>
-              <div class="catalog-detail-block">
-                <strong>Popular Sizes / Types</strong>
-                <ul class="catalog-mini-list">${specsMarkup}</ul>
-              </div>
-              <div class="catalog-detail-block">
-                <strong>Common Uses</strong>
-                <div class="catalog-chip-row compact">${useMarkup}</div>
-              </div>
-              <a class="card-cta" href="contact.html#enquiry">Request Quote &rarr;</a>
+              <a class="card-cta" href="bagasse.html?slug=${product.slug}">View Details &rarr;</a>
             </div>
           `;
           const img = card.querySelector("img");
@@ -267,15 +226,33 @@
         document.getElementById("items-title").textContent = "Available Range";
         (category.items || []).forEach((item) => {
           const article = document.createElement("article");
-          article.className = "catalog-card compact";
-          article.innerHTML = `
-            <div class="catalog-copy">
-              <p class="catalog-meta">${category.name}</p>
-              <h3>${item.name}</h3>
-              <p>${item.detail}</p>
-              <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
-            </div>
-          `;
+          article.className = item.image ? "catalog-card static" : "catalog-card compact";
+          article.innerHTML = item.image
+            ? `
+              <div class="catalog-image">
+                <img src="${item.image}" alt="${item.name}">
+              </div>
+              <div class="catalog-copy">
+                <p class="catalog-meta">${category.name}</p>
+                <h3>${item.name}</h3>
+                <p>${item.detail}</p>
+                <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
+              </div>
+            `
+            : `
+              <div class="catalog-copy">
+                <p class="catalog-meta">${category.name}</p>
+                <h3>${item.name}</h3>
+                <p>${item.detail}</p>
+                <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
+              </div>
+            `;
+          const img = article.querySelector("img");
+          if (img) {
+            img.addEventListener("error", () => {
+              article.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${category.icon}"></i></div>`;
+            });
+          }
           itemsRoot.appendChild(article);
         });
       }
