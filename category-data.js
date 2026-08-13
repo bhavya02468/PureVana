@@ -5,6 +5,27 @@ window.categoryCatalog = [
     icon: "fa-seedling",
     heroImage: "assets/images/MAIN PAGE (2).jpeg",
     highlights: [
+      { name: "Agnimantha", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/BOWLS.jpeg" },
+      { name: "Aloe Vera", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/BURGER & FAST FOOD PRODUCTS.jpeg" },
+      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CLAMSHELL BOXES.jpeg" },
+      { name: "Anantmool", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/CUPS.jpeg" },
+      { name: "Arjuna", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/EGGS PACKAGING.jpeg" },
+      { name: "Ami", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/FRUITS & VEGETABLES PACKAGING.jpeg" },
+      { name: "Ashoka", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/FOOD CONTAINERS.jpeg" },
+      { name: "Ashwagandha", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/PLATES.jpeg" },
+      { name: "Bakuchi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/TRAYS.jpeg" },
+      
+      
+      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CLAMSHELL BOXES.jpeg" },
+      { name: "Anantmool", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/CUPS.jpeg" },
+      { name: "Arjuna", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/EGGS PACKAGING.jpeg" },
+      { name: "Ami", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/FRUITS & VEGETABLES PACKAGING.jpeg" },
+      { name: "Ashoka", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/FOOD CONTAINERS.jpeg" },
+      { name: "Ashwagandha", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/PLATES.jpeg" },
+      { name: "Safed Musli", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/TRAYS.jpeg" },
+      
+    
+    
      ],
     ctaLabel: "Browse Herb Range",
     itemsType: "herbs"
@@ -18,6 +39,7 @@ window.categoryCatalog = [
     ],
     ctaLabel: "Browse Bagasse Range",
     items: [
+      { name: "Bakery", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/BAKERY.jpeg" },
       { name: "Bowls", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/BOWLS.jpeg" },
       { name: "Burger & Fast Food Products", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/BURGER & FAST FOOD PRODUCTS.jpeg" },
       { name: "Clamshell Boxes", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CLAMSHELL BOXES.jpeg" },
@@ -37,18 +59,18 @@ window.categoryCatalog = [
     highlights: [
     ],
     items: [
-      { name: "Backpack Bags", detail: "Commercial backpack styles for travel, work and everyday carry programs.", image: "assets/images/BACKPACK-1.jpeg" },
-      { name: "Beach Bags", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/BEACH-1.jpeg" },
-      { name: "Camera Bags", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/CAMERA-1.jpeg" },
+      { name: "Backpack Bags", detail: "Commercial backpack styles for travel, work and everyday carry programs.", image: "assets/images/BACKPACK BAGS-1.jpeg" },
+      { name: "Beach Bags", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/BEACH BAGS-1.jpeg" },
+      { name: "Camera Bags", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/CAMERA BAGS-1.jpeg" },
       { name: "Canvas Tote Bags", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/CANVAS TOTE BAGS-1.jpeg" },
       { name: "College Bags", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/COLLEGE BAGS-1.jpeg" },
       { name: "Conference Bags", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/CONFERENCE BAGS-1.jpeg" },
-      { name: "Cosmetic Bags", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/COSMETIC-1.jpeg" },
+      { name: "Cosmetic Bags", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/COSMETIC BAGS-1.jpeg" },
       { name: "Cotton Tote Bags", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/COTTON TOTE BAGS-1.jpeg" },
-      { name: "Crochet Bags", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CROCHET-1.jpeg" },
+      { name: "Crochet Bags", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CROCHET BAGS-1.jpeg" },
       { name: "Daily Veg Bags", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/DAILY VEG BAGS-1.jpeg" },
-      { name: "Diaper Bags", detail: "Organized multi-pocket diaper bags for baby care and gifting markets.", image: "assets/images/DIAPER-1.jpeg" },
-      { name: "Drawstring Bags", detail: "Lightweight promotional and utility drawstring bags in multiple looks.", image: "assets/images/DRAWSTRING-1.jpeg" },
+      { name: "Diaper Bags", detail: "Organized multi-pocket diaper bags for baby care and gifting markets.", image: "assets/images/DIAPER BAGS-1.jpeg" },
+      { name: "Drawstring Bags", detail: "Lightweight promotional and utility drawstring bags in multiple looks.", image: "assets/images/DRAWSTRING BAGS-1.jpeg" },
       { name: "Foldable Shopping Bags", detail: "Space-saving foldable carry bags for retail, travel and reuse programs.", image: "assets/images/FOLDABLE SHOPPING BAGS-1.jpeg" },
       { name: "Grocery Shopping Bags", detail: "Reusable shopping bags built for daily grocery and store use.", image: "assets/images/GROCERY SHOPPING BAGS-1.jpeg" },
       { name: "Gym Bags", detail: "Duffel-style gym bags for fitness, sports and lifestyle retail categories.", image: "assets/images/GYM BAGS-1.jpeg" },
@@ -164,6 +186,8 @@ window.categoryCatalog = [
     items: [
       { name: "Flexible Packaging", detail: "Stand-up pouches, zipper bags, spout pouches, laminated pouches, roll stock films and custom-printed flexible packaging.", image: "assets/images/FLEXIBLE.jpeg" },
       { name: "Paper Packaging", detail: "Corrugated boxes, paper bags, food containers, cups, trays and custom printed paper packaging solutions.", image: "assets/images/PAPER.jpeg" },
+      { name: "Textile Packaging", detail: "Corrugated boxes, paper bags, food containers, cups, trays and custom printed paper packaging solutions.", image: "assets/images/TEXTILE.jpeg" },
+    
     ]
   },
   {
@@ -207,9 +231,11 @@ window.categoryCatalog = [
   { name: "Black Pepper", detail: "Black pepper supplied in whole, sortex clean, split or broken and powder forms for bulk spice sourcing.", image: "assets/images/BLACK PEPPER.jpeg" },
   { name: "Byadgi Chilli", detail: "Byadgi chilli supplied in whole, clean, broken and powder forms for color-rich commercial chilli requirements.", image: "assets/images/BYADGI CHILLI.jpeg" },
   { name: "Caraway Seed", detail: "Caraway seed available in whole, sortex clean, split or broken and powder forms for spice and bakery ingredient sourcing.", image: "assets/images/CARAWAY SEED.jpeg" },
+  { name: "Cardamom Black", detail: "Black cardamom supplied in whole, clean graded, split or broken and powder forms with export packing options.", image: "assets/images/CARDAMOM BLACK.jpeg" },
   { name: "Cardamom Green", detail: "Green cardamom supplied in whole, clean graded, split or broken and powder forms with export packing options.", image: "assets/images/CARDAMOM GREEN.jpeg" },
   { name: "Carom Seed (Ajwain)", detail: "Carom seed available in whole, clean, split or broken and powder forms for seasoning and ingredient use.", image: "assets/images/CAROM SEED-AJWAIN.jpeg" },
   { name: "Cassia", detail: "Cassia offered in whole sticks, clean sorted, split or broken and powder forms for wholesale and export demand.", image: "assets/images/CASSIA.jpeg" },
+  { name: "Celery Seed", detail: "Celery seed supplied in whole, clean sorted, split or broken and powder forms for spice and food businesses.", image: "assets/images/CELERY SEED.jpeg" },
   { name: "Cinnamon", detail: "Cinnamon quills supplied in whole, clean sorted, split or broken and powder forms for spice and food businesses.", image: "assets/images/CINNAMON.jpeg" },
   { name: "Clove", detail: "Clove supplied in whole, clean sorted, split or broken and powder forms for food, flavour and trade buyers.", image: "assets/images/CLOVE.jpeg" },
   { name: "Coriander Seed", detail: "Coriander seed available in whole, clean, split or broken and powder forms for food processing and spice blending.", image: "assets/images/CORIANDER SEED.jpeg" },
@@ -233,6 +259,7 @@ window.categoryCatalog = [
   { name: "Saffron", detail: "Saffron offered in threads and powder options with premium packing formats for high-value bulk and trade enquiries.", image: "assets/images/SAFFRON.jpeg" },
   { name: "Sesame Seed", detail: "Sesame seed supplied in whole, clean, split or broken and powder forms with buyer-oriented packing support.", image: "assets/images/SESAME SEED.jpeg" },
   { name: "Star Anise", detail: "Star anise supplied in whole, cleaned, broken and powdered forms for seasoning, blending and export programs.", image: "assets/images/STAR ANISE.jpeg" },
+  { name: "SICHUAN PEPPER", detail: "Szechuan peppercorn supplied in whole, cleaned, broken and powdered forms for seasoning, blending and export programs.", image: "assets/images/SICHUAN PEPPER.jpeg" },
   { name: "Tamarind", detail: "Commercial tamarind supply in whole, cleaned, split and powder-ready formats for processing and trade use.", image: "assets/images/TAMARIND.jpeg" },
   { name: "Turmeric Finger", detail: "Turmeric finger available in whole, sortex clean, split or broken and powder forms for bulk requirements.", image: "assets/images/TURMERIC FINGER.jpeg" },
   { name: "White Pepper", detail: "White pepper supplied in whole, sortex clean, split or broken and powder forms for food and export buyers.", image: "assets/images/WHITE PEPPER.jpeg" }

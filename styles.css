@@ -843,7 +843,7 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(2, 8, 6, 0.95) 0%, rgba(2, 8, 6, 0.88) 45%, rgba(1, 6, 4, 0.97) 100%);
+    linear-gradient(180deg, #103203b5 0%, rgba(2, 8, 6, 0.88) 45%, rgba(2, 8, 6, 0.88) 45%);
   z-index: 1;
 }
 
