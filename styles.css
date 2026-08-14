@@ -766,6 +766,14 @@ button {
   font-size: 2.6rem;
 }
 
+.category-link-card .category-card-icon {
+  display: block;
+  width: 58px;
+  height: 64px;
+  margin: 4px 0 14px;
+  object-fit: contain;
+}
+
 .category-link-card h3 {
   margin: 0 0 8px;
   font-size: 1.05rem;
@@ -822,6 +830,39 @@ button {
   cursor: pointer;
   font-size: 1.1rem;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.category-hero-icon-wrap.with-image img {
+  cursor: zoom-in;
+}
+
+.image-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(6, 17, 27, 0.72);
+  color: var(--white);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.image-lightbox-nav:hover {
+  background: var(--gold);
+}
+
+.image-lightbox-prev {
+  left: 14px;
+}
+
+.image-lightbox-next {
+  right: 14px;
 }
 
 .scroll-to-top {

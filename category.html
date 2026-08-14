@@ -93,7 +93,13 @@
     <button class="image-lightbox-close" type="button" aria-label="Close image preview">
       <i class="fa-solid fa-xmark"></i>
     </button>
+    <button class="image-lightbox-nav image-lightbox-prev" type="button" aria-label="Previous image">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
     <img id="image-lightbox-image" alt="">
+    <button class="image-lightbox-nav image-lightbox-next" type="button" aria-label="Next image">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </dialog>
 
   <script src="herb-data.js"></script>
@@ -109,7 +115,22 @@
     const itemsRoot = document.getElementById("category-items");
     const imageLightbox = document.getElementById("image-lightbox");
     const imageLightboxImage = document.getElementById("image-lightbox-image");
+    const lightboxPrevious = imageLightbox.querySelector(".image-lightbox-prev");
+    const lightboxNext = imageLightbox.querySelector(".image-lightbox-next");
     const scrollToTopButton = document.getElementById("scroll-to-top");
+    const galleryImages = [];
+    let activeImageIndex = 0;
+
+    const openImageLightbox = (index) => {
+      if (!galleryImages.length) return;
+      activeImageIndex = (index + galleryImages.length) % galleryImages.length;
+      const image = galleryImages[activeImageIndex];
+      imageLightboxImage.src = image.src;
+      imageLightboxImage.alt = image.alt;
+      lightboxPrevious.hidden = galleryImages.length < 2;
+      lightboxNext.hidden = galleryImages.length < 2;
+      if (!imageLightbox.open) imageLightbox.showModal();
+    };
 
     window.addEventListener("scroll", () => {
       scrollToTopButton.hidden = window.scrollY < 240;
@@ -123,10 +144,11 @@
       const image = event.target.closest(".catalog-image img");
       if (!image) return;
 
-      imageLightboxImage.src = image.currentSrc || image.src;
-      imageLightboxImage.alt = image.alt;
-      imageLightbox.showModal();
+      openImageLightbox(Number(image.dataset.galleryIndex));
     });
+
+    lightboxPrevious.addEventListener("click", () => openImageLightbox(activeImageIndex - 1));
+    lightboxNext.addEventListener("click", () => openImageLightbox(activeImageIndex + 1));
 
     imageLightbox.querySelector(".image-lightbox-close").addEventListener("click", () => {
       imageLightbox.close();
@@ -151,6 +173,8 @@
       if (category.heroImage) {
         heroImage.src = category.heroImage;
         heroImage.alt = category.name;
+        heroImage.dataset.galleryIndex = galleryImages.push({ src: category.heroImage, alt: category.name }) - 1;
+        heroImage.addEventListener("click", () => openImageLightbox(Number(heroImage.dataset.galleryIndex)));
         heroImage.addEventListener("load", () => {
           heroWrap.classList.add("with-image");
           heroIcon.style.display = "none";
@@ -190,6 +214,7 @@
             </div>
           `;
           const img = card.querySelector("img");
+          img.dataset.galleryIndex = galleryImages.push({ src: herbCardImage, alt: herb.name }) - 1;
           img.addEventListener("error", () => {
             card.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${herb.icon}"></i></div>`;
           });
@@ -211,6 +236,7 @@
             </div>
           `;
           const img = card.querySelector("img");
+          img.dataset.galleryIndex = galleryImages.push({ src: `${product.imageBase}/main.jpg`, alt: product.name }) - 1;
           img.addEventListener("error", () => {
             card.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${product.icon}"></i></div>`;
           });
@@ -227,19 +253,18 @@
                 <img src="${item.image}" alt="${item.name}">
               </div>
               <div class="catalog-copy">
-                <h3>${item.name}</h3>
                 <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
               </div>
             `
             : `
               <div class="catalog-copy">
                 <p class="catalog-meta">${category.name}</p>
-                <h3>${item.name}</h3>
                 <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
               </div>
             `;
           const img = article.querySelector("img");
           if (img) {
+            img.dataset.galleryIndex = galleryImages.push({ src: item.image, alt: item.name }) - 1;
             img.addEventListener("error", () => {
               article.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${category.icon}"></i></div>`;
             });

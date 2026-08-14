@@ -38,6 +38,7 @@ window.categoryCatalog = [
       { name: "Patala", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/PATALA.jpeg" },
       { name: "Punarnava", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/PUNARNAVA.jpeg" },
       { name: "Sarpgandha", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SARPGANDHA.jpeg" },
+      { name: "Safed Musli", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SAFED MUSLI.jpeg" },
       { name: "Senna", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SENNA.jpeg" },
       { name: "Shankhpushpi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SHANKHPUSHPI.jpeg" },
       { name: "Shatavari", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SHATAVARI.jpeg" },
@@ -188,7 +189,7 @@ window.categoryCatalog = [
   {
     slug: "metal-home-decor",
     name: "Metal Home Decor",
-    icon: "fa-hammer",
+    icon: "fa-seedling",
     heroImage: "assets/images/MAIN PAGE METAL HOME DECOR.jpeg",
     highlights: [
     ],
