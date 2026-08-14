@@ -1,34 +1,55 @@
 window.categoryCatalog = [
   {
-    slug: "ayurvedic-herbal",
+    slug: "ayurvedic-herbal-products",
     name: "Ayurvedic & Herbal Products",
     icon: "fa-seedling",
-    heroImage: "assets/images/MAIN PAGE (2).jpeg",
-    highlights: [
-      { name: "Agnimantha", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/BOWLS.jpeg" },
-      { name: "Aloe Vera", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/BURGER & FAST FOOD PRODUCTS.jpeg" },
-      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CLAMSHELL BOXES.jpeg" },
-      { name: "Anantmool", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/CUPS.jpeg" },
-      { name: "Arjuna", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/EGGS PACKAGING.jpeg" },
-      { name: "Ami", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/FRUITS & VEGETABLES PACKAGING.jpeg" },
-      { name: "Ashoka", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/FOOD CONTAINERS.jpeg" },
-      { name: "Ashwagandha", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/PLATES.jpeg" },
-      { name: "Bakuchi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/TRAYS.jpeg" },
+    heroImage: "assets/images/MAIN PAGE (3).jpeg",
+    highlights: [],
+    items: [
+      { name: "Agnimantha", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/AGNIMANTHA.jpeg" },
+      { name: "Aloe Vera", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/ALOE VERA.jpeg" },
+      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/Amla.jpeg" },
+      { name: "Anantmool", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/ANANTMOOL.jpeg" },
+      { name: "Arjuna", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/ARJUNA.jpeg" },
+      { name: "Ami", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/AMI.jpeg" },
+      { name: "Ashoka", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/ASHOKA.jpeg" },
+      { name: "Ashwagandha", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/ASHWAGANDHA.jpeg" },
+      { name: "Bakuchi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/BAKUCHI.jpeg" },
+
       
-      
-      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/CLAMSHELL BOXES.jpeg" },
-      { name: "Anantmool", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/CUPS.jpeg" },
-      { name: "Arjuna", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/EGGS PACKAGING.jpeg" },
-      { name: "Ami", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/FRUITS & VEGETABLES PACKAGING.jpeg" },
-      { name: "Ashoka", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/FOOD CONTAINERS.jpeg" },
-      { name: "Ashwagandha", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/PLATES.jpeg" },
-      { name: "Safed Musli", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/TRAYS.jpeg" },
+      { name: "Bhringraj", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/BHRINGRAJ.jpeg" },
+      { name: "Bhumi Amla", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/BHUMI AMLA.jpeg" },
+      { name: "Brahmi", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/BRAHMI.jpeg" },
+      { name: "Chirayata", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/CHIRAYATA.jpeg" },
+      { name: "Daruharidra", detail: "Compact beauty and organizer pouches for gifting, travel and daily use.", image: "assets/images/DARUHARIDRA.jpeg" },
+      { name: "Giloy", detail: "Professional event and business meeting bags suited for bulk programs.", image: "assets/images/GILOY.jpeg" },
+      { name: "Gokhru", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/GOKHRU.jpeg" },
+      { name: "Gudmar", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/GUDMAR.jpeg" },
+      { name: "Hibiscus", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/HIBISCUS.jpeg" },
+      { name: "Isabgol", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/ISABGOL.jpeg" },
+      { name: "Jatamansi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/JATAMANSI.jpeg" },
+      { name: "Kalmegh", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/KALMEGH.jpeg" },
+      { name: "Khadir", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/KHADIR.jpeg" },
+      { name: "Lodhra", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/LODHRA.jpeg" },
+      { name: "Moringa", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/MORINGA.jpeg" },
+      { name: "Mulethi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/MULETHI.jpeg" },
+      { name: "Nagarmotha", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/NAGARMOTHA.jpeg" },
+      { name: "Neem", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/NEEM.jpeg" },
+      { name: "Patala", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/PATALA.jpeg" },
+      { name: "Punarnava", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/PUNARNAVA.jpeg" },
+      { name: "Sarpgandha", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SARPGANDHA.jpeg" },
+      { name: "Senna", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SENNA.jpeg" },
+      { name: "Shankhpushpi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SHANKHPUSHPI.jpeg" },
+      { name: "Shatavari", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/SHATAVARI.jpeg" },
+      { name: "Tagar", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/TAGAR.jpeg" },
+      { name: "Tulsi", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/TULSI.jpeg" },
+      { name: "Varuna", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/VARUNA.jpeg" },
+      { name: "Vasaka", detail: "Everyday student backpack styles designed for practical and repeat demand.", image: "assets/images/VASAKA.jpeg" },
       
     
     
      ],
     ctaLabel: "Browse Herb Range",
-    itemsType: "herbs"
   },
   {
     slug: "bagasse-products",
@@ -152,7 +173,7 @@ window.categoryCatalog = [
   {
     slug: "handicrafts",
     name: "Handicrafts",
-    icon: "fa-vase",
+    icon: "fa-palette",
     heroImage: "assets/images/MAIN PAGE OF HANDICRAFT.jpeg",
     highlights: [
     ],
@@ -167,7 +188,7 @@ window.categoryCatalog = [
   {
     slug: "metal-home-decor",
     name: "Metal Home Decor",
-    icon: "fa-candle-holder",
+    icon: "fa-hammer",
     heroImage: "assets/images/MAIN PAGE METAL HOME DECOR.jpeg",
     highlights: [
     ],

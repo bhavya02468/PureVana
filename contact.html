@@ -46,65 +46,86 @@
   </header>
 
   <main>
-    <section class="section section-light">
+    
+    <section class="section contact-section">
       <div class="container contact-grid">
-        <div class="info-panel">
-          <div class="section-title left">
-            <h2>Get In Touch</h2>
+        <aside class="contact-info-card">
+          <h2 class="section-title left">GET IN TOUCH
             <span></span>
-          </div>
+          </h2>
+
           <div class="contact-detail">
-            <i class="fa-solid fa-location-dot"></i>
+            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
             <div>
-              <strong>Office Address</strong>
-              <p>E-56, Sector-63, Noida - 201301, Uttar Pradesh, India</p>
+              <strong>Visit us</strong>
+              <address>E-56, Sector-63, Noida – 201301<br>Uttar Pradesh, India</address>
             </div>
           </div>
           <div class="contact-detail">
-            <i class="fa-solid fa-phone"></i>
+            <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
             <div>
-              <strong>Phone</strong>
-              <p>+91 8882995519</p>
+              <strong>Call us</strong>
+              <div class="phone-inline">
+                <a href="tel:+918882995519">+91 88829 95519</a>
+                <a class="whatsapp-link" href="https://wa.me/918882995519" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              </div>
             </div>
           </div>
           <div class="contact-detail">
-            <i class="fa-solid fa-envelope"></i>
+            <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
             <div>
-              <strong>Email</strong>
-              <p>info@purevanaint.com</p>
-              <p>purevanaindia@gmail.com</p>
+              <strong>Email us</strong>
+              <a href="mailto:info@purevanaint.com">info@purevanaint.com</a>
+              <a href="mailto:purevanaindia@gmail.com">purevanaindia@gmail.com</a>
             </div>
           </div>
-          <div class="contact-detail">
-          </div>
-        </div>
+        </aside>
 
         <div class="enquiry-panel" id="enquiry">
-          <div class="section-title left">
-            <h2>Send An Enquiry</h2>
+          <h2 class="section-title left">SEND AN ENQUIRY
             <span></span>
-          </div>
-          <form class="enquiry-form">
+          </h2>
+          <form class="enquiry-form" action="mailto:info@purevanaint.com" method="post" enctype="text/plain">
             <div class="form-row">
-              <input type="text" placeholder="Your Name">
-              <input type="text" placeholder="Company Name">
+              <div class="form-field">
+                <label for="name">Your name <span aria-hidden="true">*</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your Name">
+              </div>
+              <div class="form-field">
+                <label for="company">Company name</label>
+                <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company Name">
+              </div>
             </div>
             <div class="form-row">
-              <input type="email" placeholder="Email Address">
-              <input type="text" placeholder="Phone Number">
+              <div class="form-field">
+                <label for="email">Email address <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="Email Address">
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone Number">
+              </div>
             </div>
             <div class="form-row">
-              <input type="text" placeholder="Country">
-              <input type="text" placeholder="Product Required">
+              <div class="form-field">
+                <label for="country">Country</label>
+                <input id="country" name="country" type="text" autocomplete="country-name" placeholder="Country">
+              </div>
+              <div class="form-field">
+                <label for="product">Product required</label>
+                <input id="product" name="product" type="text" placeholder="Product Required">
+              </div>
             </div>
-            <textarea rows="6" placeholder="Tell us about your requirement"></textarea>
-            <button class="btn btn-gold wide" type="submit">Submit Enquiry <span>&rarr;</span></button>
+            <div class="form-field">
+              <label for="message">Your requirement <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your requirement"></textarea>
+            </div>
+            <button class="btn btn-gold wide" type="submit">SUBMIT ENQUIRY <i class="fa-solid fa-arrow-right"></i></button>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer removed (kept only on About Us page) -->
 </body>
 </html>

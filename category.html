@@ -84,62 +84,62 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a class="brand footer-brand-mark" href="index.html">
-          <img src="assets/purevana-logo.png" alt="Purevana">
-        </a>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="categories.html">Business Categories</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Current Path</h3>
-        <ul>
-          <li><a href="categories.html">All Categories</a></li>
-          <li><a id="footer-category-link" href="categories.html">Category</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact Info</h3>
-        <ul class="contact-list">
-          <li><i class="fa-solid fa-location-dot"></i> E-66, Sector-63, Noida - 201301, India</li>
-          <li><i class="fa-solid fa-phone"></i> +91 99585 37520</li>
-          <li><i class="fa-solid fa-envelope"></i> info@purevana.com</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Need Pricing?</h3>
-        <p class="newsletter-text">Tell us the product, quantity and destination country for faster quotation support.</p>
-        <a class="btn btn-gold" href="contact.html#enquiry">Send Enquiry</a>
-      </div>
-    </div>
-  </footer>
+  <button id="scroll-to-top" class="scroll-to-top" type="button" aria-label="Back to top" hidden>
+    <i class="fa-solid fa-arrow-up"></i>
+    <span>Top</span>
+  </button>
+
+  <dialog class="image-lightbox" id="image-lightbox" aria-label="Product image preview">
+    <button class="image-lightbox-close" type="button" aria-label="Close image preview">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img id="image-lightbox-image" alt="">
+  </dialog>
 
   <script src="herb-data.js"></script>
   <script src="bagasse-data.js"></script>
   <script src="category-data.js"></script>
   <script>
     const query = new URLSearchParams(window.location.search);
-    const slug = query.get("slug") || "ayurvedic-herbal";
+    const slug = query.get("slug") || "ayurvedic-herbal-products";
     const categories = window.categoryCatalog || [];
     const herbs = window.herbCatalog || [];
     const bagasse = window.bagasseCatalog || [];
     const category = categories.find((item) => item.slug === slug) || categories[0];
+    const itemsRoot = document.getElementById("category-items");
+    const imageLightbox = document.getElementById("image-lightbox");
+    const imageLightboxImage = document.getElementById("image-lightbox-image");
+    const scrollToTopButton = document.getElementById("scroll-to-top");
+
+    window.addEventListener("scroll", () => {
+      scrollToTopButton.hidden = window.scrollY < 240;
+    });
+
+    scrollToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    itemsRoot.addEventListener("click", (event) => {
+      const image = event.target.closest(".catalog-image img");
+      if (!image) return;
+
+      imageLightboxImage.src = image.currentSrc || image.src;
+      imageLightboxImage.alt = image.alt;
+      imageLightbox.showModal();
+    });
+
+    imageLightbox.querySelector(".image-lightbox-close").addEventListener("click", () => {
+      imageLightbox.close();
+    });
+
+    imageLightbox.addEventListener("click", (event) => {
+      if (event.target === imageLightbox) imageLightbox.close();
+    });
 
     if (category) {
       document.title = `${category.name} | Purevana International LLP`;
       document.querySelector('meta[name="description"]').setAttribute("content", category.description);
       document.getElementById("category-crumb").textContent = category.name;
-      document.getElementById("footer-category-link").textContent = category.name;
-      document.getElementById("footer-category-link").href = `category.html?slug=${category.slug}`;
       document.getElementById("category-eyebrow").textContent = category.eyebrow;
       document.getElementById("category-title").textContent = category.name;
       document.getElementById("category-description").textContent = category.description;
@@ -172,7 +172,6 @@
         highlightRoot.appendChild(article);
       });
 
-        const itemsRoot = document.getElementById("category-items");
         if (category.itemsType === "herbs") {
           document.getElementById("items-title").textContent = "Ayurvedic Herb Catalogue";
           herbs.forEach((herb) => {
