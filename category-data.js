@@ -8,7 +8,7 @@ window.categoryCatalog = [
     items: [
       { name: "Agnimantha", detail: "Protective and utility-focused camera bag formats for travel and gadget use.", image: "assets/images/AGNIMANTHA.jpeg" },
       { name: "Aloe Vera", detail: "Spacious summer and resort-style bag options for retail and gifting buyers.", image: "assets/images/ALOE VERA.jpeg" },
-      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/Amla.jpeg" },
+      { name: "Amla", detail: "Handcrafted and boutique-style crochet designs for fashion-led collections.", image: "assets/images/AMLA.jpeg" },
       { name: "Anantmool", detail: "Strong canvas totes for shopping, branding and multi-purpose retail use.", image: "assets/images/ANANTMOOL.jpeg" },
       { name: "Arjuna", detail: "Simple utility and promotional bag formats in clean commercial styles.", image: "assets/images/ARJUNA.jpeg" },
       { name: "Ami", detail: "Reusable produce and daily-use carry bags for grocery and utility needs.", image: "assets/images/AMI.jpeg" },
