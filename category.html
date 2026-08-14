@@ -150,6 +150,18 @@
     lightboxPrevious.addEventListener("click", () => openImageLightbox(activeImageIndex - 1));
     lightboxNext.addEventListener("click", () => openImageLightbox(activeImageIndex + 1));
 
+    document.addEventListener("keydown", (event) => {
+      if (!imageLightbox.open || galleryImages.length < 2) return;
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        openImageLightbox(activeImageIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        openImageLightbox(activeImageIndex + 1);
+      }
+    });
+
     imageLightbox.querySelector(".image-lightbox-close").addEventListener("click", () => {
       imageLightbox.close();
     });
