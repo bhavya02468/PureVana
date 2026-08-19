@@ -1071,6 +1071,16 @@ button {
   line-height: 1.85;
 }
 
+.about-page .body-copy {
+  font-size: 1.14rem;
+}
+
+@media (max-width: 920px) {
+  .enquiry-form .country-phone-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .page-flow {
   display: flex;
   flex-wrap: wrap;

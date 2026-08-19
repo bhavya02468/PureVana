@@ -27,17 +27,17 @@
     <!-- Slideshow Background Images -->
     <div class="hero-slideshow">
       <img class="hero-slide active" src="assets/Slide 2.jpeg" alt="Purevana products showcase 2">
-      <img class="hero-slide active" src="assets/Slide 3.jpeg" alt="Purevana products showcase 3">
-      <img class="hero-slide active" src="assets/Slide 4.jpeg" alt="Purevana products showcase 4">
-      <img class="hero-slide active" src="assets/Slide 5.jpeg" alt="Purevana products showcase 5">
-      <img class="hero-slide active" src="assets/Slide 6.jpeg" alt="Purevana products showcase 6">
-      <img class="hero-slide active" src="assets/Slide 7.jpeg" alt="Purevana products showcase 7">
-      <img class="hero-slide active" src="assets/Slide 8.jpeg" alt="Purevana products showcase 8">
-      <img class="hero-slide active" src="assets/Slide 9.jpeg" alt="Purevana products showcase 9">
-      <img class="hero-slide active" src="assets/Slide 10.jpeg" alt="Purevana products showcase 10">
-      <img class="hero-slide active" src="assets/Slide 11.jpeg" alt="Purevana products showcase 11">
-      <img class="hero-slide active" src="assets/Slide 12.jpeg" alt="Purevana products showcase 12">
-      <img class="hero-slide active" src="assets/Slide 1.jpeg" alt="Purevana products showcase 1">
+      <img class="hero-slide" src="assets/Slide 3.jpeg" alt="Purevana products showcase 3">
+      <img class="hero-slide" src="assets/Slide 4.jpeg" alt="Purevana products showcase 4">
+      <img class="hero-slide" src="assets/Slide 5.jpeg" alt="Purevana products showcase 5">
+      <img class="hero-slide" src="assets/Slide 6.jpeg" alt="Purevana products showcase 6">
+      <img class="hero-slide" src="assets/Slide 7.jpeg" alt="Purevana products showcase 7">
+      <img class="hero-slide" src="assets/Slide 8.jpeg" alt="Purevana products showcase 8">
+      <img class="hero-slide" src="assets/Slide 9.jpeg" alt="Purevana products showcase 9">
+      <img class="hero-slide" src="assets/Slide 10.jpeg" alt="Purevana products showcase 10">
+      <img class="hero-slide" src="assets/Slide 11.jpeg" alt="Purevana products showcase 11">
+      <img class="hero-slide" src="assets/Slide 12.jpeg" alt="Purevana products showcase 12">
+      <img class="hero-slide" src="assets/Slide 1.jpeg" alt="Purevana products showcase 1">
 
 
       <!-- Add more images here as needed -->
@@ -68,9 +68,12 @@
       slides[currentSlide].classList.add('active');
     }
 
-    // Change slide every 2 seconds if multiple images are available
+    // Change slide more quickly for a livelier hero.
     if (slides.length > 1) {
-      setInterval(rotateSlide, 3000);
+      setTimeout(() => {
+        rotateSlide();
+        setInterval(rotateSlide, 3000);
+      }, 900);
     }
   </script>
 </body>
