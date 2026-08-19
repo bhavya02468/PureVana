@@ -1081,6 +1081,19 @@ button {
   }
 }
 
+@media (max-width: 640px) {
+  .contact-grid .enquiry-panel h2.section-title.left {
+    align-items: center;
+    flex-direction: row;
+    font-size: clamp(1.4rem, 7vw, 2.25rem);
+    white-space: nowrap;
+  }
+
+  .contact-grid .enquiry-panel h2.section-title.left span {
+    display: none;
+  }
+}
+
 .page-flow {
   display: flex;
   flex-wrap: wrap;
@@ -2309,6 +2322,12 @@ button {
   line-height: 1;
 }
 
+.contact-grid .enquiry-panel h2.section-title.left {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+}
+
 .contact-info-card h2.section-title.left span,
 .contact-grid .enquiry-panel h2.section-title.left span {
   flex: 0 0 62px;
@@ -2399,5 +2418,18 @@ button {
   .contact-detail address,
   .contact-detail a {
     font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-grid .enquiry-panel h2.section-title.left {
+    align-items: center;
+    flex-direction: row;
+    font-size: clamp(1.4rem, 7vw, 2.25rem);
+    white-space: nowrap;
+  }
+
+  .contact-grid .enquiry-panel h2.section-title.left span {
+    display: none;
   }
 }
