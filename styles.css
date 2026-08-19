@@ -841,8 +841,8 @@ button {
   top: 50%;
   z-index: 1;
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50%;
@@ -863,6 +863,29 @@ button {
 
 .image-lightbox-next {
   right: 14px;
+}
+
+.image-lightbox-enquiry {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #bf9341, #ddb567);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.24);
+}
+
+.image-lightbox-enquiry:hover {
+  background: #b98d3e;
 }
 
 .scroll-to-top {
@@ -944,8 +967,7 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, #103203b5 0%, rgba(2, 8, 6, 0.88) 45%, rgba(2, 8, 6, 0.88) 45%);
-  z-index: 1;
+    linear-gradient(180deg, #103203b5 0%, rgb(70 105 28 / 88%) 45%,rgb(70 105 28 / 88%) 45%);
 }
 
 .main-hero-shell {
@@ -1905,6 +1927,28 @@ button {
   border: 1px solid #e3ddd1;
   background: #fffdf9;
   color: var(--text);
+}
+
+.enquiry-form select {
+  width: 100%;
+  padding: 14px 40px 14px 14px;
+  border: 1px solid #e3ddd1;
+  border-radius: 8px;
+  background: #fffdf9;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.enquiry-form select:focus {
+  outline: none;
+  border-color: #5e9c70;
+  box-shadow: 0 0 0 3px rgba(43, 125, 70, 0.08);
+}
+
+.enquiry-form select:disabled {
+  color: #999;
+  cursor: not-allowed;
 }
 
 .enquiry-form textarea {
