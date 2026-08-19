@@ -120,6 +120,7 @@
     const imageLightboxImage = document.getElementById("image-lightbox-image");
     const lightboxPrevious = imageLightbox.querySelector(".image-lightbox-prev");
     const lightboxNext = imageLightbox.querySelector(".image-lightbox-next");
+    const lightboxEnquiry = imageLightbox.querySelector(".image-lightbox-enquiry");
     const scrollToTopButton = document.getElementById("scroll-to-top");
     const galleryImages = [];
     let activeImageIndex = 0;
@@ -130,6 +131,9 @@
       const image = galleryImages[activeImageIndex];
       imageLightboxImage.src = image.src;
       imageLightboxImage.alt = image.alt;
+      const enquiryParams = new URLSearchParams({ category: image.categorySlug });
+      if (image.subcategory) enquiryParams.set("subcategory", image.subcategory);
+      lightboxEnquiry.href = `contact.html?${enquiryParams.toString()}#enquiry`;
       lightboxPrevious.hidden = galleryImages.length < 2;
       lightboxNext.hidden = galleryImages.length < 2;
       if (!imageLightbox.open) imageLightbox.showModal();
@@ -188,7 +192,11 @@
       if (category.heroImage) {
         heroImage.src = category.heroImage;
         heroImage.alt = category.name;
-        heroImage.dataset.galleryIndex = galleryImages.push({ src: category.heroImage, alt: category.name }) - 1;
+        heroImage.dataset.galleryIndex = galleryImages.push({
+          src: category.heroImage,
+          alt: category.name,
+          categorySlug: category.slug
+        }) - 1;
         heroImage.addEventListener("click", () => openImageLightbox(Number(heroImage.dataset.galleryIndex)));
         heroImage.addEventListener("load", () => {
           heroWrap.classList.add("with-image");
@@ -229,7 +237,12 @@
             </div>
           `;
           const img = card.querySelector("img");
-          img.dataset.galleryIndex = galleryImages.push({ src: herbCardImage, alt: herb.name }) - 1;
+          img.dataset.galleryIndex = galleryImages.push({
+            src: herbCardImage,
+            alt: herb.name,
+            categorySlug: category.slug,
+            subcategory: herb.name
+          }) - 1;
           img.addEventListener("error", () => {
             card.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${herb.icon}"></i></div>`;
           });
@@ -251,7 +264,12 @@
             </div>
           `;
           const img = card.querySelector("img");
-          img.dataset.galleryIndex = galleryImages.push({ src: `${product.imageBase}/main.jpg`, alt: product.name }) - 1;
+          img.dataset.galleryIndex = galleryImages.push({
+            src: `${product.imageBase}/main.jpg`,
+            alt: product.name,
+            categorySlug: category.slug,
+            subcategory: product.name
+          }) - 1;
           img.addEventListener("error", () => {
             card.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${product.icon}"></i></div>`;
           });
@@ -268,18 +286,23 @@
                 <img src="${item.image}" alt="${item.name}">
               </div>
               <div class="catalog-copy">
-                <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
+                <a class="card-cta" href="contact.html?category=${encodeURIComponent(category.slug)}&subcategory=${encodeURIComponent(item.name)}#enquiry">Request Details &rarr;</a>
               </div>
             `
             : `
               <div class="catalog-copy">
                 <p class="catalog-meta">${category.name}</p>
-                <a class="card-cta" href="contact.html#enquiry">Request Details &rarr;</a>
+                <a class="card-cta" href="contact.html?category=${encodeURIComponent(category.slug)}&subcategory=${encodeURIComponent(item.name)}#enquiry">Request Details &rarr;</a>
               </div>
             `;
           const img = article.querySelector("img");
           if (img) {
-            img.dataset.galleryIndex = galleryImages.push({ src: item.image, alt: item.name }) - 1;
+            img.dataset.galleryIndex = galleryImages.push({
+              src: item.image,
+              alt: item.name,
+              categorySlug: category.slug,
+              subcategory: item.name
+            }) - 1;
             img.addEventListener("error", () => {
               article.querySelector(".catalog-image").innerHTML = `<div class="catalog-fallback"><i class="fa-solid ${category.icon}"></i></div>`;
             });

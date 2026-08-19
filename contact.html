@@ -117,8 +117,8 @@
                   <option value="Other" data-code="">Other</option>
               </div>
               <div class="form-field">
-                <label for="phone">Phone number</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone Number">
+                <label for="phone">Phone number <span aria-hidden="true">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Phone Number">
               </div>
             </div>
             <div class="form-row">
@@ -141,7 +141,8 @@
             </div>
             <div class="form-field">
               <label for="message">Your requirement <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your requirement"></textarea>
+              <textarea id="message" name="message" rows="5" required aria-describedby="message-hint" placeholder="Tell us about your requirement (at least 20 words)"></textarea>
+              <small class="field-hint" id="message-hint">Please enter at least 20 words. <span id="word-count">0</span>/20 words</small>
             </div>
             <button class="btn btn-gold wide" type="submit">SUBMIT ENQUIRY <i class="fa-solid fa-arrow-right"></i></button>
           </form>
@@ -156,6 +157,8 @@
     const phoneInput = document.getElementById('phone');
     const productCategory = document.getElementById('product-category');
     const productOption = document.getElementById('product-option');
+    const messageInput = document.getElementById('message');
+    const wordCount = document.getElementById('word-count');
     const categoryCatalog = window.categoryCatalog || [];
 
     categoryCatalog.forEach((category) => {
@@ -164,6 +167,8 @@
       option.textContent = category.name;
       productCategory.appendChild(option);
     });
+
+    const enquiryParameters = new URLSearchParams(window.location.search);
 
     countrySelect.addEventListener('change', () => {
       const dialCode = countrySelect.selectedOptions[0].dataset.code || '';
@@ -195,6 +200,22 @@
       });
 
       productOption.disabled = !choices.length;
+    });
+
+    const selectedCategory = enquiryParameters.get('category');
+    const selectedSubcategory = enquiryParameters.get('subcategory');
+    if (selectedCategory && categoryCatalog.some((category) => category.slug === selectedCategory)) {
+      productCategory.value = selectedCategory;
+      productCategory.dispatchEvent(new Event('change'));
+      if (selectedSubcategory && [...productOption.options].some((option) => option.value === selectedSubcategory)) {
+        productOption.value = selectedSubcategory;
+      }
+    }
+
+    messageInput.addEventListener('input', () => {
+      const words = messageInput.value.trim() ? messageInput.value.trim().split(/\s+/).length : 0;
+      wordCount.textContent = words;
+      messageInput.setCustomValidity(words > 0 && words < 20 ? 'Please enter at least 20 words about your requirement.' : '');
     });
   </script>
 
