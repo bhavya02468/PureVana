@@ -794,24 +794,17 @@ button {
   padding-bottom: 16px;
 }
 
-.product-selection + .product-selection {
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-
 .product-selection-actions {
   display: flex;
   gap: 12px;
   margin-top: 10px;
 }
 
-.category-control-row,
 .subcategory-control-row {
   display: flex;
   gap: 10px;
 }
 
-.category-control-row select,
 .subcategory-control-row select {
   min-width: 0;
   flex: 1;
@@ -843,6 +836,59 @@ button {
 
 .form-remove-button:hover {
   color: #5f2217;
+}
+
+.enquiry-status {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 13px 15px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.enquiry-status.is-visible {
+  display: flex;
+}
+
+.enquiry-status::before {
+  flex: 0 0 auto;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.enquiry-status.success {
+  border-color: rgba(10, 61, 37, 0.2);
+  background: #edf7f0;
+  color: #0a3d25;
+}
+
+.enquiry-status.success::before {
+  content: "\f058";
+}
+
+.enquiry-status.sending {
+  border-color: rgba(202, 160, 79, 0.35);
+  background: #fff8e9;
+  color: #6b5114;
+}
+
+.enquiry-status.sending::before {
+  content: "\f110";
+}
+
+.enquiry-status.error {
+  border-color: rgba(138, 53, 36, 0.25);
+  background: #fff0ed;
+  color: #8a3524;
+}
+
+.enquiry-status.error::before {
+  content: "\f071";
 }
 
 .category-link-card p {

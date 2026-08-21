@@ -75,7 +75,7 @@
           <h2 class="section-title left">SEND AN ENQUIRY
             <span></span>
           </h2>
-          <form class="enquiry-form" action="mailto:info@purevanaint.com" method="post" enctype="text/plain">
+          <form class="enquiry-form" id="enquiry-form">
             <div class="form-row">
               <div class="form-field">
                 <label for="name">Your name <span aria-hidden="true">*</span></label>
@@ -164,14 +164,12 @@
                 </div>
               </div>
             </div>
-            <div class="product-selection-actions" id="add-category-actions" hidden>
-              <button class="form-add-button add-category" type="button">+ Add another category</button>
-            </div>
             <div class="form-field">
               <label for="message">Your requirement</label>
               <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirement"></textarea>
             </div>
             <button class="btn btn-gold wide" type="submit">SUBMIT ENQUIRY <i class="fa-solid fa-arrow-right"></i></button>
+            <p class="enquiry-status" id="enquiry-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -182,12 +180,13 @@
   <script>
     const countrySelect = document.getElementById('country');
     const phoneInput = document.getElementById('phone');
+    const enquiryForm = document.getElementById('enquiry-form');
+    const enquiryStatus = document.getElementById('enquiry-status');
+    const submitButton = enquiryForm.querySelector('[type="submit"]');
     const productSelections = document.getElementById('product-selections');
-    const addCategoryActions = document.getElementById('add-category-actions');
     const productCategory = document.getElementById('product-category');
     const productOption = document.getElementById('product-option');
     const categoryCatalog = window.categoryCatalog || [];
-    let selectionNumber = 1;
 
     function populateCategories(select) {
       categoryCatalog.forEach((category) => {
@@ -256,57 +255,11 @@
       const hasSubcategories = populateSubcategories(primarySubcategory, categorySelect.value);
       primarySubcategoryField.hidden = !hasSubcategories;
       group.querySelector('.product-selection-actions').hidden = !hasSubcategories;
-      addCategoryActions.hidden = !productCategory.value;
     }
 
-    function addCategory() {
-      selectionNumber += 1;
-      const group = document.createElement('div');
-      group.className = 'product-selection extra-product-selection';
-      group.dataset.selection = selectionNumber;
-      const categoryField = document.createElement('div');
-      categoryField.className = 'form-field';
-      const label = document.createElement('label');
-      label.textContent = 'Additional product category';
-      const row = document.createElement('div');
-      row.className = 'category-control-row';
-      const categorySelect = document.createElement('select');
-      categorySelect.className = 'category-select';
-      categorySelect.name = `product_category_${selectionNumber}`;
-      categorySelect.innerHTML = '<option value="">Select a category</option>';
-      populateCategories(categorySelect);
-      const removeButton = document.createElement('button');
-      removeButton.className = 'form-remove-button';
-      removeButton.type = 'button';
-      removeButton.textContent = 'Remove';
-      removeButton.addEventListener('click', () => group.remove());
-      row.append(categorySelect, removeButton);
-      categoryField.append(label, row);
-
-      const subcategoryField = document.createElement('div');
-      subcategoryField.className = 'form-field subcategory-field';
-      subcategoryField.hidden = true;
-      const subcategoryLabel = document.createElement('label');
-      subcategoryLabel.textContent = 'Subcategory';
-      const subcategorySelect = document.createElement('select');
-      subcategorySelect.className = 'subcategory-select';
-      subcategorySelect.name = `product_subcategory_${selectionNumber}`;
-      subcategorySelect.disabled = true;
-      subcategoryField.append(subcategoryLabel, subcategorySelect);
-
-      const actions = document.createElement('div');
-      actions.className = 'product-selection-actions';
-      actions.hidden = true;
-      const addSubcategoryButton = document.createElement('button');
-      addSubcategoryButton.className = 'form-add-button add-subcategory';
-      addSubcategoryButton.type = 'button';
-      addSubcategoryButton.textContent = '+ Add another subcategory';
-      actions.appendChild(addSubcategoryButton);
-
-      categorySelect.addEventListener('change', () => setCategory(group));
-      addSubcategoryButton.addEventListener('click', () => addSubcategory(group));
-      group.append(categoryField, subcategoryField, actions);
-      productSelections.appendChild(group);
+    function showEnquiryStatus(message, state) {
+      enquiryStatus.textContent = message;
+      enquiryStatus.className = `enquiry-status is-visible ${state}`;
     }
 
     populateCategories(productCategory);
@@ -327,7 +280,6 @@
 
     productCategory.addEventListener('change', () => setCategory(productSelections.firstElementChild));
     productSelections.firstElementChild.querySelector('.add-subcategory').addEventListener('click', () => addSubcategory(productSelections.firstElementChild));
-    addCategoryActions.querySelector('.add-category').addEventListener('click', addCategory);
 
     const selectedCategory = enquiryParameters.get('category');
     const selectedSubcategory = enquiryParameters.get('subcategory');
@@ -338,6 +290,50 @@
         productOption.value = selectedSubcategory;
       }
     }
+
+    enquiryForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const selectedCategory = categoryCatalog.find((category) => category.slug === productCategory.value);
+      const subcategories = [...productSelections.querySelectorAll('.subcategory-select')]
+        .map((select) => select.value)
+        .filter(Boolean);
+      const payload = {
+        name: document.getElementById('name').value.trim(),
+        company: document.getElementById('company').value.trim(),
+        country: countrySelect.value,
+        phone: phoneInput.value.trim(),
+        email: document.getElementById('email').value.trim(),
+        requirement: document.getElementById('message').value.trim(),
+        category: selectedCategory ? { [selectedCategory.name]: subcategories } : {}
+      };
+
+      submitButton.disabled = true;
+      showEnquiryStatus('Sending your enquiry…', 'sending');
+
+      try {
+        const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+        const inquiriesEndpoint = isLocalPreview
+          ? '/api/inquiries'
+          : 'https://purevanaserver.netlify.app/api/inquiries';
+        const response = await fetch(inquiriesEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error('The server could not accept the enquiry.');
+
+        enquiryForm.reset();
+        productSelections.firstElementChild.querySelectorAll('.extra-subcategory-field').forEach((field) => field.remove());
+        setCategory(productSelections.firstElementChild);
+        showEnquiryStatus('Enquiry sent successfully. We’ll get back to you shortly.', 'success');
+      } catch (error) {
+        showEnquiryStatus('We could not send your enquiry. Please check your connection and try again.', 'error');
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
 
   </script>
 
