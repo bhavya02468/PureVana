@@ -281,7 +281,7 @@ window.categoryCatalog = [
   { name: "Saffron", detail: "Saffron offered in threads and powder options with premium packing formats for high-value bulk and trade enquiries.", image: "assets/images/SAFFRON.jpeg" },
   { name: "Sesame Seed", detail: "Sesame seed supplied in whole, clean, split or broken and powder forms with buyer-oriented packing support.", image: "assets/images/SESAME SEED.jpeg" },
   { name: "Star Anise", detail: "Star anise supplied in whole, cleaned, broken and powdered forms for seasoning, blending and export programs.", image: "assets/images/STAR ANISE.jpeg" },
-  { name: "SICHUAN PEPPER", detail: "Szechuan peppercorn supplied in whole, cleaned, broken and powdered forms for seasoning, blending and export programs.", image: "assets/images/SICHUAN PEPPER.jpeg" },
+  { name: "Sichuan Pepper", detail: "Szechuan peppercorn supplied in whole, cleaned, broken and powdered forms for seasoning, blending and export programs.", image: "assets/images/SICHUAN PEPPER.jpeg" },
   { name: "Tamarind", detail: "Commercial tamarind supply in whole, cleaned, split and powder-ready formats for processing and trade use.", image: "assets/images/TAMARIND.jpeg" },
   { name: "Turmeric Finger", detail: "Turmeric finger available in whole, sortex clean, split or broken and powder forms for bulk requirements.", image: "assets/images/TURMERIC FINGER.jpeg" },
   { name: "White Pepper", detail: "White pepper supplied in whole, sortex clean, split or broken and powder forms for food and export buyers.", image: "assets/images/WHITE PEPPER.jpeg" }

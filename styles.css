@@ -480,6 +480,8 @@ button {
   position: relative;
   min-height: 170px;
   padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: linear-gradient(180deg, #fffefb, #f8f3ea);
@@ -760,25 +762,87 @@ button {
 }
 
 .category-link-card i {
-  display: block;
-  margin: 10px 0 12px;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  margin: 4px 0 14px;
   color: #0a3d25;
   font-size: 2.6rem;
 }
 
 .category-link-card .category-card-icon {
   display: block;
-  width: 58px;
-  height: 64px;
-  margin: 4px 0 14px;
+  width: 44px;
+  height: 52px;
+  margin: 10px 0 20px;
   object-fit: contain;
 }
 
 .category-link-card h3 {
   margin: 0 0 8px;
+  min-height: 2.8em;
   font-size: 1.05rem;
   line-height: 1.4;
   text-transform: uppercase;
+}
+
+.category-link-card .card-cta {
+  margin-top: auto;
+}
+
+.product-selection {
+  padding-bottom: 16px;
+}
+
+.product-selection + .product-selection {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.product-selection-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.category-control-row,
+.subcategory-control-row {
+  display: flex;
+  gap: 10px;
+}
+
+.category-control-row select,
+.subcategory-control-row select {
+  min-width: 0;
+  flex: 1;
+}
+
+.form-add-button,
+.form-remove-button {
+  border: 0;
+  background: transparent;
+  color: #0a3d25;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-add-button {
+  padding: 0;
+}
+
+.form-remove-button {
+  padding: 0 4px;
+  color: #8a3524;
+}
+
+.form-add-button:hover {
+  color: var(--gold);
+}
+
+.form-remove-button:hover {
+  color: #5f2217;
 }
 
 .category-link-card p {
@@ -2318,7 +2382,7 @@ button {
   box-shadow: none;
   color: #0a2316;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 3vw, 2.45rem);
   line-height: 1;
 }
 

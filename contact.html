@@ -141,28 +141,35 @@
                 <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Phone Number">
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="email">Email address <span aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="Email Address">
-              </div>
-              <div class="form-field">
-                <label for="product-category">Product category</label>
-                <select id="product-category" name="product_category">
-                  <option value="">Select a category</option>
-                </select>
+            <div class="form-field">
+              <label for="email">Email address <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="Email Address">
+            </div>
+            <div id="product-selections">
+              <div class="product-selection" data-original="true" data-selection="1">
+                <div class="form-field">
+                  <label for="product-category">Product category</label>
+                  <select id="product-category" class="category-select" name="product_category">
+                    <option value="">Select a category</option>
+                  </select>
+                </div>
+                <div class="form-field subcategory-field" hidden>
+                  <label for="product-option">Subcategory</label>
+                  <select id="product-option" class="subcategory-select" name="product_option" disabled>
+                    <option value="">Choose a category first</option>
+                  </select>
+                </div>
+                <div class="product-selection-actions" hidden>
+                  <button class="form-add-button add-subcategory" type="button">+ Add another subcategory</button>
+                </div>
               </div>
             </div>
-            <div class="form-field">
-              <label for="product-option">Subcategory</label>
-              <select id="product-option" name="product_option" disabled>
-                <option value="">Choose a category first</option>
-              </select>
+            <div class="product-selection-actions" id="add-category-actions" hidden>
+              <button class="form-add-button add-category" type="button">+ Add another category</button>
             </div>
             <div class="form-field">
-              <label for="message">Your requirement <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="5" required aria-describedby="message-hint" placeholder="Tell us about your requirement (at least 20 words)"></textarea>
-              <small class="field-hint" id="message-hint">Please enter at least 20 words. <span id="word-count">0</span>/20 words</small>
+              <label for="message">Your requirement</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirement"></textarea>
             </div>
             <button class="btn btn-gold wide" type="submit">SUBMIT ENQUIRY <i class="fa-solid fa-arrow-right"></i></button>
           </form>
@@ -175,18 +182,134 @@
   <script>
     const countrySelect = document.getElementById('country');
     const phoneInput = document.getElementById('phone');
+    const productSelections = document.getElementById('product-selections');
+    const addCategoryActions = document.getElementById('add-category-actions');
     const productCategory = document.getElementById('product-category');
     const productOption = document.getElementById('product-option');
-    const messageInput = document.getElementById('message');
-    const wordCount = document.getElementById('word-count');
     const categoryCatalog = window.categoryCatalog || [];
+    let selectionNumber = 1;
 
-    categoryCatalog.forEach((category) => {
-      const option = document.createElement('option');
-      option.value = category.slug;
-      option.textContent = category.name;
-      productCategory.appendChild(option);
-    });
+    function populateCategories(select) {
+      categoryCatalog.forEach((category) => {
+        const option = document.createElement('option');
+        option.value = category.slug;
+        option.textContent = category.name;
+        select.appendChild(option);
+      });
+    }
+
+    function populateSubcategories(select, categorySlug) {
+      const category = categoryCatalog.find((item) => item.slug === categorySlug);
+      const choices = category?.items || [];
+      select.replaceChildren();
+
+      const placeholder = document.createElement('option');
+      placeholder.value = '';
+      placeholder.textContent = 'Select a subcategory';
+      select.appendChild(placeholder);
+
+      choices.forEach((item) => {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name;
+        select.appendChild(option);
+      });
+      select.disabled = !choices.length;
+      return choices.length > 0;
+    }
+
+    function addSubcategory(group, removable = true) {
+      const categorySelect = group.querySelector('.category-select');
+      if (!categorySelect.value) return;
+
+      const field = document.createElement('div');
+      field.className = 'form-field extra-subcategory-field';
+      const label = document.createElement('label');
+      label.textContent = 'Additional subcategory';
+      const row = document.createElement('div');
+      row.className = 'subcategory-control-row';
+      const select = document.createElement('select');
+      select.className = 'subcategory-select';
+      select.name = `product_subcategory_${group.dataset.selection}[]`;
+      populateSubcategories(select, categorySelect.value);
+      row.appendChild(select);
+
+      if (removable) {
+        const removeButton = document.createElement('button');
+        removeButton.className = 'form-remove-button';
+        removeButton.type = 'button';
+        removeButton.textContent = 'Remove';
+        removeButton.addEventListener('click', () => field.remove());
+        row.appendChild(removeButton);
+      }
+
+      field.append(label, row);
+      group.querySelector('.product-selection-actions').before(field);
+    }
+
+    function setCategory(group) {
+      const categorySelect = group.querySelector('.category-select');
+      const primarySubcategoryField = group.querySelector('.subcategory-field');
+      const primarySubcategory = primarySubcategoryField.querySelector('.subcategory-select');
+      group.querySelectorAll('.extra-subcategory-field').forEach((field) => field.remove());
+
+      const hasSubcategories = populateSubcategories(primarySubcategory, categorySelect.value);
+      primarySubcategoryField.hidden = !hasSubcategories;
+      group.querySelector('.product-selection-actions').hidden = !hasSubcategories;
+      addCategoryActions.hidden = !productCategory.value;
+    }
+
+    function addCategory() {
+      selectionNumber += 1;
+      const group = document.createElement('div');
+      group.className = 'product-selection extra-product-selection';
+      group.dataset.selection = selectionNumber;
+      const categoryField = document.createElement('div');
+      categoryField.className = 'form-field';
+      const label = document.createElement('label');
+      label.textContent = 'Additional product category';
+      const row = document.createElement('div');
+      row.className = 'category-control-row';
+      const categorySelect = document.createElement('select');
+      categorySelect.className = 'category-select';
+      categorySelect.name = `product_category_${selectionNumber}`;
+      categorySelect.innerHTML = '<option value="">Select a category</option>';
+      populateCategories(categorySelect);
+      const removeButton = document.createElement('button');
+      removeButton.className = 'form-remove-button';
+      removeButton.type = 'button';
+      removeButton.textContent = 'Remove';
+      removeButton.addEventListener('click', () => group.remove());
+      row.append(categorySelect, removeButton);
+      categoryField.append(label, row);
+
+      const subcategoryField = document.createElement('div');
+      subcategoryField.className = 'form-field subcategory-field';
+      subcategoryField.hidden = true;
+      const subcategoryLabel = document.createElement('label');
+      subcategoryLabel.textContent = 'Subcategory';
+      const subcategorySelect = document.createElement('select');
+      subcategorySelect.className = 'subcategory-select';
+      subcategorySelect.name = `product_subcategory_${selectionNumber}`;
+      subcategorySelect.disabled = true;
+      subcategoryField.append(subcategoryLabel, subcategorySelect);
+
+      const actions = document.createElement('div');
+      actions.className = 'product-selection-actions';
+      actions.hidden = true;
+      const addSubcategoryButton = document.createElement('button');
+      addSubcategoryButton.className = 'form-add-button add-subcategory';
+      addSubcategoryButton.type = 'button';
+      addSubcategoryButton.textContent = '+ Add another subcategory';
+      actions.appendChild(addSubcategoryButton);
+
+      categorySelect.addEventListener('change', () => setCategory(group));
+      addSubcategoryButton.addEventListener('click', () => addSubcategory(group));
+      group.append(categoryField, subcategoryField, actions);
+      productSelections.appendChild(group);
+    }
+
+    populateCategories(productCategory);
 
     const enquiryParameters = new URLSearchParams(window.location.search);
 
@@ -202,25 +325,9 @@
       phoneInput.placeholder = dialCode ? `${dialCode} Phone Number` : 'Phone Number';
     });
 
-    productCategory.addEventListener('change', () => {
-      const category = categoryCatalog.find((item) => item.slug === productCategory.value);
-      const choices = category?.items || [];
-      productOption.replaceChildren();
-
-      const placeholder = document.createElement('option');
-      placeholder.value = '';
-      placeholder.textContent = choices.length ? 'Select a subcategory' : 'Choose a category first';
-      productOption.appendChild(placeholder);
-
-      choices.forEach((item) => {
-        const option = document.createElement('option');
-        option.value = item.name;
-        option.textContent = item.name;
-        productOption.appendChild(option);
-      });
-
-      productOption.disabled = !choices.length;
-    });
+    productCategory.addEventListener('change', () => setCategory(productSelections.firstElementChild));
+    productSelections.firstElementChild.querySelector('.add-subcategory').addEventListener('click', () => addSubcategory(productSelections.firstElementChild));
+    addCategoryActions.querySelector('.add-category').addEventListener('click', addCategory);
 
     const selectedCategory = enquiryParameters.get('category');
     const selectedSubcategory = enquiryParameters.get('subcategory');
@@ -232,11 +339,6 @@
       }
     }
 
-    messageInput.addEventListener('input', () => {
-      const words = messageInput.value.trim() ? messageInput.value.trim().split(/\s+/).length : 0;
-      wordCount.textContent = words;
-      messageInput.setCustomValidity(words > 0 && words < 20 ? 'Please enter at least 20 words about your requirement.' : '');
-    });
   </script>
 
 </body>
